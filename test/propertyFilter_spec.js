@@ -140,9 +140,9 @@ describe('PropertyFilter', () => {
 
     it('will only return filtered property fields', () => {
         assert.deepEqual(filteredProperties[0], {
-            "concataddress": "Level 6 146 Arthur Street North Sydney NSW 2060",
-            "type": "htv",
-            "workflow": "completed"
+            'concataddress': 'Level 6 146 Arthur Street North Sydney NSW 2060',
+            'type': 'htv',
+            'workflow': 'completed'
         })
     });
 });
