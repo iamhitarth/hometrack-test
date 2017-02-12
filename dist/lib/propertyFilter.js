@@ -6,13 +6,15 @@ exports.getFiltered = function (properties, forType, forWorkflow) {
 
         if (property.type == forType && property.workflow == forWorkflow) {
             var add = property.address;
-            property = {
-                'concataddress': add.buildingNumber + ' ' + add.street + ' ' + add.suburb + ' ' + add.state + ' ' + add.postcode,
-                'type': forType,
-                'workflow': forWorkflow
-            };
+            if (add) {
+                property = {
+                    'concataddress': add.buildingNumber + ' ' + add.street + ' ' + add.suburb + ' ' + add.state + ' ' + add.postcode,
+                    'type': forType,
+                    'workflow': forWorkflow
+                };
 
-            filtered.push(property);
+                filtered.push(property);
+            }
         }
 
         return filtered;
