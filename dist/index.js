@@ -23,8 +23,15 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-    var filtered = propFilter.getFiltered(req.body.payload, 'htv', 'completed');
-    res.json({ response: filtered });
+    var props = req.body.payload;
+    if (props && props instanceof Array) {
+        var filtered = propFilter.getFiltered(props, 'htv', 'completed');
+        res.json({ response: filtered });
+    } else {
+        res.status(400).json({
+            'error': 'Could not decode request: Invalid payload'
+        });
+    }
 });
 
 app.listen(port);
