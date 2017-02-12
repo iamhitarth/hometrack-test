@@ -4,7 +4,8 @@
   "description": "An API that returns a filtered list of fields, from the passed in data.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node index.js"
   },
   "author": "Hitarth Sharma",
   "license": "ISC",
